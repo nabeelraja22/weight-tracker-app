@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weight Tracker App</title>
+  <title>Weight Tracker Upgraded V2</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -11,7 +11,9 @@
   <div class="container">
     <h1>Weight Tracker</h1>
 
-    <!-- Form -->
+    <!-- New: Dark/Light mode toggle button -->
+    <button id="themeToggle">Toggle Dark/Light Mode</button>
+
     <div class="form-container">
       <input type="date" id="date">
       <input type="number" id="weight" placeholder="Weight (kg)">
@@ -23,7 +25,9 @@
       <button id="addEntry">Add Entry</button>
     </div>
 
-    <!-- Entries Table -->
+    <!-- New: Toast notification -->
+    <div id="toast" class="toast">Well done! 🎉</div>
+
     <h2>Progress Table</h2>
     <table id="entriesTable">
       <thead>
@@ -40,15 +44,18 @@
       <tbody></tbody>
     </table>
 
-    <!-- Weight Graph -->
     <h2>Weight Trend</h2>
     <canvas id="weightChart"></canvas>
 
-    <!-- Milestones -->
+    <!-- New: Milestones section -->
     <h2>Milestones Achieved</h2>
     <ul id="milestones"></ul>
-  </div>
 
+    <!-- New: Summary stats section -->
+    <h2>Summary Stats</h2>
+    <ul id="summaryStats"></ul>
+
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

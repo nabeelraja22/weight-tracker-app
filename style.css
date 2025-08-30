@@ -1,14 +1,33 @@
+/* General body styles with theme variables */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg);
+    color: var(--text);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Default light mode variables */
+  :root {
+    --bg: #f4f4f4;
+    --text: #000;
+    --card-bg: #fff;
+    --toast-bg: #28a745; /* New: toast notification color */
+  }
+  
+  /* Dark mode variables */
+  body.dark {
+    --bg: #121212;
+    --text: #f4f4f4;
+    --card-bg: #1e1e1e;
+    --toast-bg: #4caf50; /* New: toast color for dark mode */
   }
   
   .container {
     max-width: 800px;
     margin: 30px auto;
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -60,4 +79,26 @@ body {
   canvas {
     max-width: 100%;
   }
+  
+  /* New: Toast notification styles */
+  .toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: var(--toast-bg);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    font-weight: bold;
+  }
+  .toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2s;
+  }
+  @keyframes fadein { from {opacity: 0;} to {opacity: 1;} }
+  @keyframes fadeout { from {opacity: 1;} to {opacity: 0;} }
   
