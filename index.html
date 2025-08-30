@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight Tracker App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Weight Tracker</h1>
+
+    <!-- Form -->
+    <div class="form-container">
+      <input type="date" id="date">
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <input type="number" id="water" placeholder="Water (L)">
+      <input type="number" id="sleep" placeholder="Sleep (hrs)">
+      <input type="number" id="steps" placeholder="Steps">
+      <label><input type="checkbox" id="workout"> Workout Done</label>
+      <label><input type="checkbox" id="meals"> Meals on Plan</label>
+      <button id="addEntry">Add Entry</button>
+    </div>
+
+    <!-- Entries Table -->
+    <h2>Progress Table</h2>
+    <table id="entriesTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Weight</th>
+          <th>Water</th>
+          <th>Sleep</th>
+          <th>Steps</th>
+          <th>Workout</th>
+          <th>Meals</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Weight Graph -->
+    <h2>Weight Trend</h2>
+    <canvas id="weightChart"></canvas>
+
+    <!-- Milestones -->
+    <h2>Milestones Achieved</h2>
+    <ul id="milestones"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
